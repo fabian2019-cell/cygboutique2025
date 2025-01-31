@@ -1,0 +1,15 @@
+<?php
+    require "barcode.php";
+    if (isset($_REQUEST['id'])) {/* comprobamos si la variable que viene en la url si existe */
+        # code...
+        require ("../controlador/DAOProducto.php");
+        $daoE=new DAOProducto();
+        $fila=null;
+        $fila=$daoE->consultaProd();
+    }
+    ?>
+
+    <img src="barcode.php?text=12345678&size=50&orientation=horizontal$codetype=Code39&print=false&sizefactor=1" />
+    <br/>
+    <img src="barcode.php?text=1234&size=50&orientation=horizontal$codetype=Code39&print=false&sizefactor=1" />
+    <br/>
